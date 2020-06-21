@@ -14,11 +14,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] - 
 ### Added
+- write the sum crate
+- github work flows for test, build and integration_test
 
 ### Changed
 
 ### Removed
 
 
-[Unreleased]: https://github.com/aricma/itemids/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/aricma/itemids/compare/v1.0.0...v1.0.0
+[Unreleased]: https://github.com/aricma/sum/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/aricma/sum/compare/v1.0.0...v1.0.0
