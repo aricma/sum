@@ -1,3 +1,5 @@
 .idea
 /target
 **/*.rs.bk
+integration_test/diff.txt
+integration_test/output.txt
