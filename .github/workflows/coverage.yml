@@ -15,7 +15,14 @@ jobs:
 
         steps:
             -   uses: actions/checkout@v2
-
+            -   uses: actions-rs/toolchain@v1
+                with:
+                    toolchain: nightly
+                    override: true
+            -   uses: actions-rs/cargo@v1
+                with:
+                    command: test
+                    args: --all-features --no-fail-fast
             -   name: Run tests
                 run: cargo test --verbose
 
