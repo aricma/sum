@@ -1,0 +1,27 @@
+name: integration_test
+
+on: [ push, pull_request ]
+
+env:
+    CARGO_TERM_COLOR: always
+
+jobs:
+    integration_test:
+
+        runs-on: ubuntu-latest
+
+        steps:
+            -   uses: actions/checkout@v2
+
+            -   name: Run tests
+                run: cargo build --verbose
+
+            -   name: Use the build to run sum and write to output.txt
+                run: ./target/debug/sum < ./integration_test/input.txt > ./integration_test/output.txt
+
+            -   name: Diff the expected with the generated output and write the diff in diff.txt
+                run: comm -3 ./integration_test/expected.txt ./integration_test/output.txt > ./integration_test/diff.txt
+
+            -   name: Throw if the generated diff.txt is not empty
+                run: bash ./integration_test/integration_test.sh
+
